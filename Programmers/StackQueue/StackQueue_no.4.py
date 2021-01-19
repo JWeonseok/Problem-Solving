@@ -1,5 +1,11 @@
 # 210118 월 프린터
 
+"""
+구현에 어려움은 없었다
+다만 아직 파이썬 코드 구현에 느낌이 없는 듯..
+다른 사람 풀이로 enumerate를 사용하여 tuple을 이용
+"""
+
 def solution(priorities, location):
     answer = 0
     while(len(priorities)>0):

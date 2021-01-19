@@ -1,5 +1,11 @@
 # 210118 월 소수 찾기
 
+"""
+자료형의 효율적인 변환이 포인트인듯
+다른 사람의 풀이는 map을 활용해서 set에서 답을 도출하여 풀이
+또한 아리스토텔레스의 체를 for문 내부로 구현했다.
+"""
+
 from itertools import permutations
 def isPrime(n):
     if n < 2 :
