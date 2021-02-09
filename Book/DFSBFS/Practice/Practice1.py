@@ -36,5 +36,6 @@ while q:
 if not q:
     print(-1)
 else:
+    q.sort()
     for answer in q:
         print(answer)
