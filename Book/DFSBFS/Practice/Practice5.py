@@ -1,33 +1,39 @@
 # 연산자 끼워 넣기
 import sys
-import copy
 N = int(sys.stdin.readline().rstrip())
 num = list(map(int, sys.stdin.readline().rstrip().split()))
 cal = list(map(int, sys.stdin.readline().rstrip().split()))
+sum_cal = sum(cal)
 result = []
-def recur(num, cal, ind):
-    if sum(cal) == 0:
-        result.append(num[-1])
-        return
+perm = []
 
+def calculation(num1, num2, c):
+    if c == 1:
+        return num1 + num2
+    elif c == 2:
+        return num1 - num2
+    elif c == 3:
+        return num1 * num2
+    elif c == 4:
+        return int(num1 / num2)
+
+def recur(ind):
+
+    if ind == sum_cal:
+        tmp = num[0]
+        for i in range(len(perm)):
+            tmp = calculation(tmp, num[i+1], perm[i])
+        result.append(tmp)
+    
     for i in range(len(cal)):
         if cal[i] == 0:
             continue
-
-        if i == 0:
-            num[ind+1] += num[ind]
-        elif i == 1:
-            num[ind+1] = num[ind] - num[ind+1]
-        elif i == 2:
-            num[ind+1] *= num[ind]
-        elif i == 3:
-            num[ind+1] = num[ind] // num[ind+1]
-
         cal[i] -= 1
-        ind += 1
-        recur(num, cal, ind)
-        #cal[i] += 1
-        ind -= 1
-recur(num, cal, 0)
-#print(result)
-print(max(result), min(result))
+        perm.append(i+1)
+        recur(ind + 1)
+        cal[i] += 1
+        perm.pop()
+
+recur(0)
+print(max(result))
+print(min(result))
