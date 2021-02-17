@@ -1,4 +1,4 @@
-# 연산자 끼워 넣기
+# 210216 화 연산자 끼워 넣기 (삼성전자 SW 역량테스트)
 import sys
 N = int(sys.stdin.readline().rstrip())
 num = list(map(int, sys.stdin.readline().rstrip().split()))

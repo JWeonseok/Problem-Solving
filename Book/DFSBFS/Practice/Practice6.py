@@ -18,15 +18,19 @@ for i in range(N):
             
 obstacles = list(combinations(temp, 3))
 
-def check(x, y):    
+def check(x, y):
+    c = []    
     for m in range(1, N):
         for i in range(4):
             m_x = x + m*dx[i]
-            m_y = y + m*dx[i]
+            m_y = y + m*dy[i]
             if not chkvalid(m_x, m_y):
                 continue
-            if grid[m_x][m_y] == "S":
-                return False
+            if grid[m_x][m_y] == "O":
+                c.append(i)
+            elif grid[m_x][m_y] == "S":
+                if i not in c:
+                    return False
     return True
             
             
@@ -52,7 +56,7 @@ for obs in obstacles:
             if not check(i, j):
                 chk = True
                 break
-                
+                   
     if not chk:
         chk2 = True
         print("YES")
