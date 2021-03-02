@@ -1,4 +1,11 @@
-# 감시 피하기
+# 210217 수 감시 피하기
+
+"""
+생각보다 세세한 부분에 신경써야 하는 문제
+큰 틀은 쉽게 만들 수 있으나 디테일한 부분에서
+시간을 오래 잡아먹혔다
+생각보다 백준 문제 티어가 낮아서 당황;
+"""
 
 import sys
 from itertools import combinations
@@ -56,7 +63,7 @@ for obs in obstacles:
             if not check(i, j):
                 chk = True
                 break
-                   
+
     if not chk:
         chk2 = True
         print("YES")
