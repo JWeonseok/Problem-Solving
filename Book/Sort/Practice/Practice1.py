@@ -1,4 +1,4 @@
-# 210302 국영수
+# 210302 화 국영수
 
 N = int(input())
 students = [(input().split()) for _ in range(N)]
